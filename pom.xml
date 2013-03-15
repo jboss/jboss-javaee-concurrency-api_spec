@@ -11,7 +11,7 @@
   
   <groupId>org.jboss.spec.javax.enterprise.concurrency</groupId>
   <artifactId>jboss-concurrency-api_1.0_spec</artifactId>
-  <version>1.0.0.Final-SNAPSHOT</version>
+  <version>1.0.0.Alpha1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>Concurrency Utilities API</name>
@@ -22,9 +22,9 @@
   </licenses>
 
   <scm>
-    <connection>scm:git:git@github.com:jboss/jboss-concurrency-api_spec.git</connection>
-    <developerConnection>scm:git:git@github.com:jboss/jboss-concurrency-api_spec.git</developerConnection>
-    <url>https://github.com/jboss/jboss-conc-api_spec</url>
+    <connection>scm:git:git@github.com:jboss/jboss-javaee-concurrency-api_spec.git</connection>
+    <developerConnection>scm:git:git@github.com:jboss/jboss-javaee-concurrency-api_spec.git</developerConnection>
+    <url>https://github.com/jboss/jboss-javaee-concurrency-api_spec</url>
   </scm>
   
   <build>
@@ -78,10 +78,10 @@
           <instructions>
             <Specification-Title>JSR-000236 Concurrency Utilities API</Specification-Title>
             <Specification-Vendor>Oracle</Specification-Vendor>
-            <Specification-Version>7</Specification-Version>
+            <Specification-Version>1.0</Specification-Version>
             <!-- Set the package version to match the spec version -->
             <Export-Package>
-              javax.enterprise.concurrency.*;version=7
+              javax.enterprise.concurrency*;version=1.0
             </Export-Package>
           </instructions>
         </configuration>
@@ -105,7 +105,7 @@
             <manifestEntries>
               <Specification-Title>JSR-000236 Concurrency Utilities API</Specification-Title>
               <Specification-Vendor>Oracle</Specification-Vendor>
-              <Specification-Version>7</Specification-Version>
+              <Specification-Version>1.0</Specification-Version>
             </manifestEntries>
           </archive>
         </configuration>

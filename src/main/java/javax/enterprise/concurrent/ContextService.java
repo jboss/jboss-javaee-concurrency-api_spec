@@ -5,7 +5,6 @@ import java.util.Map;
 /**
  */
 public interface ContextService {
-    String USE_PARENT_TRANSACTION = "javax.enterprise.concurrent.USE_PARENT_TRANSACTION";
 
     Object createContextualProperty(Object instance, Class<?>... interfaces) throws IllegalArgumentException;
 

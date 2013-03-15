@@ -41,10 +41,6 @@ public final class ManagedExecutors {
             return executionProperties;
         }
 
-        public String getIdentityDescription(final Locale locale) {
-            return "anonymous";
-        }
-
         public ManagedTaskListener getManagedTaskListener() {
             return taskListener;
         }
@@ -75,10 +71,6 @@ public final class ManagedExecutors {
 
         public Map<String, String> getExecutionProperties() {
             return executionProperties;
-        }
-
-        public String getIdentityDescription(final Locale locale) {
-            return "anonymous";
         }
 
         public ManagedTaskListener getManagedTaskListener() {
