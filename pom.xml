@@ -14,11 +14,20 @@
   <version>1.0.0.Alpha1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>Concurrency Utilities API</name>
-  <description>JSR-000236 Concurrency Utilities API</description>
+  <name>Concurrency Utilities for JavaEE</name>
+  <description>JSR-000236 Concurrency Utilities API Classes</description>
   
   <licenses>
-    <!-- unknown -->
+    <license>
+      <name>Common Development and Distribution License</name>
+      <url>http://repository.jboss.org/licenses/cddl.txt</url>
+      <distribution>repo</distribution>
+    </license>
+    <license>
+      <name>GNU General Public License, Version 2 with the Classpath Exception</name>
+      <url>http://repository.jboss.org/licenses/gpl-2.0-ce.txt</url>
+      <distribution>repo</distribution>
+    </license>
   </licenses>
 
   <scm>
@@ -46,7 +55,6 @@
                   <directory>${basedir}</directory>
                   <includes>
                     <include>LICENSE</include>
-                    <include>README</include>
                   </includes>
                 </resource>
               </resources>              
@@ -81,7 +89,7 @@
             <Specification-Version>1.0</Specification-Version>
             <!-- Set the package version to match the spec version -->
             <Export-Package>
-              javax.enterprise.concurrency*;version=1.0
+              javax.enterprise.concurrent*;version=1.0
             </Export-Package>
           </instructions>
         </configuration>
