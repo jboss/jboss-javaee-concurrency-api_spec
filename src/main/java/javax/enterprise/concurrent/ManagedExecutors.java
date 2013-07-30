@@ -6,11 +6,11 @@ import java.util.concurrent.Callable;
 
 /**
  */
-public final class ManagedExecutors {
+public class ManagedExecutors {
     private ManagedExecutors() {}
 
     public static boolean isCurrentThreadShutdown() {
-        final Thread thread = Thread.currentThread();
+        Thread thread = Thread.currentThread();
         return thread instanceof ManageableThread && ((ManageableThread)thread).isShutdown();
     }
 
@@ -23,9 +23,9 @@ public final class ManagedExecutors {
     }
 
     static class ManagedCallable<V> extends AbstractManagedTask implements Callable<V> {
-        private final Callable<V> task;
+        private Callable<V> task;
 
-        ManagedCallable(final Callable<V> task, final ManagedTaskListener taskListener, final Map<String, String> executionProperties) {
+        ManagedCallable(Callable<V> task, ManagedTaskListener taskListener, Map<String, String> executionProperties) {
             super(task, taskListener, executionProperties);
             this.task = task;
         }
@@ -44,9 +44,9 @@ public final class ManagedExecutors {
     }
 
     static class ManagedRunnable extends AbstractManagedTask implements Runnable {
-        private final Runnable task;
+        private Runnable task;
 
-        ManagedRunnable(final Runnable task, final ManagedTaskListener taskListener, final Map<String, String> executionProperties) {
+        ManagedRunnable(Runnable task, ManagedTaskListener taskListener, Map<String, String> executionProperties) {
             super(task, taskListener, executionProperties);
             this.task = task;
         }
@@ -57,14 +57,14 @@ public final class ManagedExecutors {
     }
 
     abstract static class AbstractManagedTask implements ManagedTask {
-        private final ManagedTaskListener taskListener;
+        private ManagedTaskListener taskListener;
         private Map<String, String> executionProperties = null;
 
         AbstractManagedTask(Object task, ManagedTaskListener taskListener, Map<String, String> executionProperties) throws IllegalArgumentException {
             if (task == null) {
                 throw new IllegalArgumentException("null task");
             }
-            final ManagedTask managedTask = task instanceof ManagedTask ? (ManagedTask) task : null;
+            ManagedTask managedTask = task instanceof ManagedTask ? (ManagedTask) task : null;
             if (taskListener != null) {
                 this.taskListener = taskListener;
             } else {
